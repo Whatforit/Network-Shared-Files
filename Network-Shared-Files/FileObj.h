@@ -10,7 +10,8 @@ public:
 	string name;
 	int size;
 	string hash;
-	FileObj(string name) {
+	FileObj(string name)
+	{
 		this->name = name;
 		this->updateHash();
 		this->size = computeSize();

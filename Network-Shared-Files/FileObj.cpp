@@ -43,8 +43,7 @@ int FileObj::computeSize()
 	return length;
 }
 
-bool FileObj::hashChanged() {
+bool FileObj::hashChanged()
+{
 	return (this->computeHash() == this->hash);
 }
-
-
