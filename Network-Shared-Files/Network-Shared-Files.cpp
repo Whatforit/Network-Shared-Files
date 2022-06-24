@@ -14,7 +14,7 @@ vector<string> listFiles(string dir, int mode)
 		for (auto& p : filesystem::directory_iterator(dir))
 		{
 			//cout << p.path().string();
-			if (!p.is_directory() || p.path().extension() == ".hash" || p.path().extension() == ".back") {
+			if (!p.is_directory() && p.path().extension() != ".hash" && p.path().extension() != ".back") {
 				fileList.push_back(p.path().string());
 			}
 		}
