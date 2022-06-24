@@ -304,11 +304,17 @@ int main() {
 
 	fileObjVec.insert(fileObjVec.end(), newFileObjVec.begin(), newFileObjVec.end());
 
-	//print fileObjVec
-	for (int i = 0; i < fileObjVec.size(); i++)
+	//loop through fileObjVec looking for changes to the hash
+	while (1)
 	{
-		cout << fileObjVec[i].getName() << endl;
-		cout << fileObjVec[i].getHash() << endl;
+		for (auto& fileObj : fileObjVec)
+		{
+			if (!fileObj.hashChanged())
+			{
+				cout << "Hash changed for " << fileObj.getName() << endl;
+				fileObj.updateHash();
+			}
+		}
 	}
 
 }

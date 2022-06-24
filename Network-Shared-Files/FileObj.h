@@ -9,19 +9,20 @@ class FileObj {
 public:
 	string name;
 	int size;
-	string md5;
+	string hash;
 	FileObj(string name) {
 		this->name = name;
 		this->updateHash();
 		this->size = computeSize();
 	}
 	//~FileObj();
-	void setHash(string hash) { this->md5 = md5; }
+	void setHash(string hash) { this->hash = hash; }
 	string getName() { return this->name; }
 	int getSize() { return size; }
-	string getHash() { return md5; }
-	void updateHash() { this->md5 = computeHash(); }
+	string getHash() { return hash; }
+	void updateHash() { this->hash = computeHash(); }
 	int computeSize();
+	bool hashChanged();
 
 private:
 	string computeHash();
