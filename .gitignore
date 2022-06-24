@@ -9,8 +9,8 @@
 *.user
 *.userosscache
 *.sln.docstates
-NSF/*.back
-NSF/*.hash
+*.back
+*.hash
 /NSF
 
 # User-specific files (MonoDevelop/Xamarin Studio)

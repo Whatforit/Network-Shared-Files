@@ -307,13 +307,19 @@ int main() {
 	//loop through fileObjVec looking for changes to the hash
 	while (1)
 	{
+		bool change = false;
 		for (auto& fileObj : fileObjVec)
 		{
 			if (!fileObj.hashChanged())
 			{
 				cout << "Hash changed for " << fileObj.getName() << endl;
 				fileObj.updateHash();
+				change = true;
 			}
+		}
+		if (change)
+		{
+			writeHashFile(createTupleVector(fileObjVec), nsfHashFile);
 		}
 	}
 
